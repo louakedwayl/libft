@@ -2,7 +2,7 @@ NAME = libft.a
 
 HEAD = Libft.h
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -lbsd
 
 SRCFILES = *.c
 

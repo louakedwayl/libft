@@ -6,7 +6,7 @@
 /*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:02:08 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/21 19:31:50 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:30:33 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	main(void)
 {
-	char	string[25];
+	char	string[256];
+	char	string2[256] = "SUCCESS";
+	char	*string3;
 
 	printf("1  / Test ft_strlen : 1 :%zu\n", ft_strlen("a"));
 	printf("2  / Test isalpha : 1 :%d\n", ft_isalpha('A'));
@@ -28,7 +30,12 @@ int	main(void)
 	printf("10 / Test ft_strlcpy : 1 : %zu\n", ft_strlcpy("z", "a", 1));
 	ft_memset(string, 49, 25);
 	printf("11 / Test ft_memset :1 :%c\n", string[0]);
-	ft_bzero(string,25);
-	printf("12 / Test ft_bzero :0 :%c\n",string[0]);
+	ft_bzero(string, 25);
+	printf("12 / Test ft_bzero :0 :%c\n", string[0]);
+	string3 = ft_strdup(string2);
+	printf("13 / Test ft_strdup : SUCCES :%s\n", string3);
+	printf("14 / Test ft_atoi : -2147483648 : %d\n", ft_atoi("-2147483648"));
 
 }
+
+

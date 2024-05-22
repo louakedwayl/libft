@@ -6,7 +6,7 @@
 /*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:35:59 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/21 20:16:08 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:30:58 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 {
 	size_t	i;
-	int	j;
+	int		j;
 
 	j = ft_strlen(src);
 	i = 0;
