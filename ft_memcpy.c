@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 18:11:05 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/23 13:06:19 by wlouaked         ###   ########.fr       */
+/*   Created: 2024/05/23 14:36:18 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/24 20:42:30 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	char		*string;
+	char		*string2;
+	size_t		i;
 
+	if (!dest && !src)
+		return (NULL);
+	string = (char *)src;
+	string2 = (char *)dest;
 	i = 0;
-	while (i < n && s1[i])
+	while (i < n)
 	{
-		if (s1[i] < s2[i])
-		{
-			return (-1);
-		}
-		if (s1[i] > s2[i])
-		{
-			return (1);
-		}
+		string2[i] = string[i];
 		i++;
 	}
-	if (s1[i] == '\0' && s2[i] != '\0')
-	{
-		return (-1);
-	}
-	return (0);
+	return (dest);
 }

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 18:11:05 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/23 13:06:19 by wlouaked         ###   ########.fr       */
+/*   Created: 2024/05/24 19:02:30 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/24 19:13:28 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*returnvalue;
+	size_t			i;
 
 	i = 0;
-	while (i < n && s1[i])
+	returnvalue = (unsigned char *)s;
+	while (i < n)
 	{
-		if (s1[i] < s2[i])
-		{
-			return (-1);
-		}
-		if (s1[i] > s2[i])
-		{
-			return (1);
-		}
+		if ((unsigned char)returnvalue[i] == (unsigned char)c)
+			return ((void *)&returnvalue[i]);
 		i++;
 	}
-	if (s1[i] == '\0' && s2[i] != '\0')
-	{
-		return (-1);
-	}
-	return (0);
+	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:36:01 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/21 19:37:05 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:48:15 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		string[i] = 48;
+		string[i] = '\0';
 		i++;
 	}
-}	
+}

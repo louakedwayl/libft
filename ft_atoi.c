@@ -6,15 +6,15 @@
 /*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:06:21 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/22 16:13:12 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/24 19:36:33 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*int	ft_atoi(const char *nptr);
+int	ft_atoi(const char *nptr);
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", ft_atoi("-2147483648"));
 	printf("%d\n", atoi("-2147483648"));
@@ -28,8 +28,8 @@ int	main(void)
 	printf("%d\n", atoi("+-2147483648"));
 	printf("%d\n", ft_atoi("++2147483648"));
 	printf("%d\n", atoi("++2147483648"));
-}*/
-
+}
+*/
 int	ft_atoi(const char *nptr)
 {
 	int	i;

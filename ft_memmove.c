@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 18:11:05 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/23 13:06:19 by wlouaked         ###   ########.fr       */
+/*   Created: 2024/05/23 16:48:53 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/24 19:57:36 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	char		*ptsrc;
+	char		*ptdst;
+	size_t		i;
 
-	i = 0;
-	while (i < n && s1[i])
+	ptsrc = (char *)src;
+	ptdst = (char *)dest;
+	if (ptdst > ptsrc)
 	{
-		if (s1[i] < s2[i])
+		i = n;
+		while (i > 0)
 		{
-			return (-1);
+			i--;
+			ptdst[i] = ptsrc[i];
 		}
-		if (s1[i] > s2[i])
-		{
-			return (1);
-		}
-		i++;
 	}
-	if (s1[i] == '\0' && s2[i] != '\0')
+	else if (ptdst < ptsrc)
 	{
-		return (-1);
+		i = 0;
+		while (i < n)
+		{
+			ptdst[i] = ptsrc[i];
+			i++;
+		}
 	}
-	return (0);
+	return (dest);
 }

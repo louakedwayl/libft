@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 18:11:05 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/23 13:06:19 by wlouaked         ###   ########.fr       */
+/*   Created: 2024/05/24 19:14:53 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/24 20:44:29 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	size_t		i;
+	size_t		len;
+	char		*returnstring;
 
 	i = 0;
-	while (i < n && s1[i])
+	len = ft_strlen(s);
+	returnstring = NULL;
+	while (i <= len)
 	{
-		if (s1[i] < s2[i])
+		if ((unsigned char)s[i] == (unsigned char)c)
 		{
-			return (-1);
+			returnstring = ((char *)&s[i]);
 		}
-		if (s1[i] > s2[i])
-		{
-			return (1);
-		}
+		if (!s[i] && !c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	if (s1[i] == '\0' && s2[i] != '\0')
+	if (returnstring)
 	{
-		return (-1);
+		return (returnstring);
 	}
-	return (0);
+	return (NULL);
 }
