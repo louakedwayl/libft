@@ -19,6 +19,7 @@ int	main(void)
 	char	*string3;
 	char	*string4;
 	char	*string5;
+	char	*string6;
 
 	printf("1  / Test ft_strlen : 1 :%zu\n", ft_strlen("a"));
 	printf("2  / Test isalpha : 1 :%d\n", ft_isalpha('A'));
@@ -48,5 +49,8 @@ int	main(void)
 	printf("17 / Test ft_strchr  Wayl : %s\n", ft_strchr("Je m'appele Wayl", 'W'));
 	printf("18 / Test ft_strrchr les chats rouges : %s", ft_strrchr("Je suis un chat qui aime les chats rouges\n", 'l'));
 	printf("19 / Test ft_memchr Wayl :%s ", (char *)ft_memchr("Je m'appele Wayl", 'W', 17));
-	printf("\n20 / Test ft_memcmp 1: %d",ft_memcmp("Waym","Wayl",4));
+	printf("\n20 / Test ft_memcmp 1: %d\n",ft_memcmp("Waym","Wayl",4));
+	    string6 = calloc(20,sizeof(char));
+        if(string6[0] == '\0')
+	printf("21 / Test ft_calloc SUCCESS: SUCCESS ");
 }
