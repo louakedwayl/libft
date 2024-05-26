@@ -23,7 +23,13 @@ SRC = ft_atoi.c \
 	ft_strchr.c\
 	ft_strrchr.c\
 	ft_memchr.c\
-	ft_memcmp.c
+	ft_memcmp.c\
+	ft_calloc.c\
+	ft_itoa.c\
+	ft_putstr_fd.c\
+	ft_putchar_fd.c\
+	ft_putendl_fd.c\
+	ft_putnbr_fd.c
 
 OBJ = $(SRC:.c=.o)
 OPT = -rc
