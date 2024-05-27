@@ -29,7 +29,9 @@ SRC = ft_atoi.c \
 	ft_putstr_fd.c\
 	ft_putchar_fd.c\
 	ft_putendl_fd.c\
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c\
+	ft_substr.c\
+	ft_strnstr.c
 
 OBJ = $(SRC:.c=.o)
 OPT = -rc

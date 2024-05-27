@@ -6,7 +6,7 @@
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:28:47 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/26 20:06:20 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:42:43 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ char	*ft_strrchr(const char *s, int c);				//18
 int		ft_strncmp(const char *s1, const char *s2, size_t n);	//12
 void	*ft_memchr(const void *s, int c, size_t n);			//19
 int		ft_memcmp(const void *s1, const void *s2, size_t n);	//20
-char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);	//27
 int		ft_atoi(const char *nptr);				//14
 void	*ft_calloc(size_t nmemb, size_t size);				//21
 char	*ft_strdup(const char *s);					//13:
 							
-char *ft_substr(char const *s, unsigned int start,size_t len);
+char *ft_substr(char const *s, unsigned int start,size_t len);		//26
 char *ft_strjoin(char const *s1, char const *s2);
 char *ft_itoa(int n);							//21
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
