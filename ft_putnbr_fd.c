@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/28 16:49:47 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/28 16:50:21 by wlouaked         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_md(int nb, int clone, int fd);
@@ -33,7 +45,7 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_m(nb, clone, fd);
 		ft_udcm(nb, clone, fd);
 		clone = nb % 10;
-		ft_translate(clone ,fd);
+		ft_translate (clone, fd);
 	}
 	if (nb == -2147483648)
 	{

@@ -6,7 +6,7 @@
 /*   By: wlouaked <wlouaked@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:11:05 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/27 17:00:19 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:45:18 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		return (-1);
 	}
-
-
 	return (0);
 }

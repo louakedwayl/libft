@@ -6,7 +6,7 @@
 /*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:35:59 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/22 13:30:58 by wlouaked         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:05:06 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,26 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 
 	j = ft_strlen(src);
 	i = 0;
+	if (siz == 0)
+		return (j);
 	while (i < siz - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (j);
 }
+/*
+int	main (void)
+{
+	char *string = "lorem ipsum dolor sit amet";
+	char *string2;
+
+	string2 = malloc (sizeof(char) * ft_strlen(string));
+	ft_strlcpy (string2, string, 0);
+	printf("%s", string2);
+
+
+}
+*/
