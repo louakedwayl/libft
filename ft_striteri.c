@@ -1,33 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlouaked <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:08:42 by wlouaked          #+#    #+#             */
-/*   Updated: 2024/05/29 21:49:39 by wlouaked         ###   ########.fr       */
+/*   Created: 2024/05/29 20:33:43 by wlouaked          #+#    #+#             */
+/*   Updated: 2024/05/30 17:37:32 by wlouaked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
+		f(i, &s[i]);
 		i++;
 	}
-	return (i);
 }
 /*
-int main (void)
+void    ft_toupper2(unsigned int i, char *c);
+
+int     main (void)
 {
-	char *string ="wayl";
+        char string[] = "wayl et maya";
 
-	printf("%d",ft_strlen(string));
+        ft_striteri(string,ft_toupper2);
+        printf("%s", string);
+}
 
-}*/
+void    ft_toupper2(unsigned int i, char *c)
+{
+        if (*c >= 'a' && *c <= 'z')
+        {
+                *c -= 32;
+        }
+        return ;
+}
+*/
