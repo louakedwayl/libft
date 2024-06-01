@@ -36,7 +36,8 @@ SRC = ft_atoi.c \
 	ft_strmapi.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
-	ft_strlcat.c
+	ft_strlcat.c\
+	ft_split.c
 
 OBJ = $(SRC:.c=.o)
 OPT = -rc
