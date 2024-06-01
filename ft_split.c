@@ -6,7 +6,7 @@ int     len(char const *s, char c, int start);
 
 int main (void)
 {
-	char	string[] = "Je     suis    un     arbre  je   mage du fer  ddd";
+	char	string[] = "     Je     suis    un     arbre  je   mage du fer  ddd   ";
 	ft_split(string, ' ');
 }
 
@@ -25,7 +25,7 @@ char    **ft_split(char const *s, char c)
 
 	while (i < ft_countword(s, c))
 	{
-		retval[i] = ft_substr(s, start, len(s, c, start));
+               	retval[i] = ft_substr(s, start, len(s, c, start));
 		start += len(s, c, start);
 		while (s[start] == c)
 			start++;
@@ -35,7 +35,7 @@ char    **ft_split(char const *s, char c)
 	return (retval);
 }
 
-//calcul nombre de string
+//calcul nombre de mot
 int     ft_countword(char const *s, char c)
 {
 	int	i;
@@ -58,7 +58,13 @@ int     ft_countword(char const *s, char c)
 //calcul taille des string
 int	len(char const *s, char c, int start)
 {
+	int	len;
+
+	len = 0;
 	while (s[start] && s[start] != c)
+	{	
+		len++;
 		start++;
-	return (start);
+	}
+	return (len);
 }
