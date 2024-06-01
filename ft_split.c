@@ -1,43 +1,42 @@
 #include "libft.h"
 
 char	**ft_split(char const *s, char c);
-int     ft_strlenvega(char *string, int start, char c);
-int	ft_strcount(char const *s, char c);
+int	ft_countword(char const *s, char c);
+int     len(char const *s, char c, int start);
 
 int main (void)
 {
-	char	string[] = "   Je     suis    un     arbre     ";
+	char	string[] = "Je     suis    un     arbre  je   mage du fer  ddd";
 	ft_split(string, ' ');
-
-
 }
 
-char **ft_split(char const *s, char c)
+char    **ft_split(char const *s, char c)
 {
+	char 	**retval;
 	int	i;
-       	int	start;
-	char **retval;
+	int	start;
 
+
+	retval = malloc (sizeof(char *) * (ft_countword(s, c) + 1));
 	i = 0;
 	start = 0;
-	while (s[start] && s[start] == c)
-	{
+	while (s[start] == c)
 		start++;
-	}
-	   retval = malloc (sizeof(char *) * (ft_strcount(s, c) + 1));
-	while (i < ft_strcount(s, c))
+
+	while (i < ft_countword(s, c))
 	{
-		retval[i] = ft_substr((char *)s, start, ft_strlenvega((char *)s, start, c));
-		start += ft_strlenvega((char *)s, start, c);
-		printf("retval[%d] start:%d  :%s\n", i, start, retval[i]);
+		retval[i] = ft_substr(s, start, len(s, c, start));
+		start += len(s, c, start);
+		while (s[start] == c)
+			start++;
+		printf("retval[%d] :%s\n",i ,retval[i]);
 		i++;
 	}
-	retval[i] = NULL;
 	return (retval);
 }
 
-//strcount compte le nombre de string
-int     ft_strcount(char const *s, char c)
+//calcul nombre de string
+int     ft_countword(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -46,29 +45,20 @@ int     ft_strcount(char const *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c &&   s[i+1] != c &&  s[i+1]  )
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i])
 			count++;
-		i++;
+		while (s[i] != c && s[i])
+			i++;
 	}
-	printf ("%d : count", count);
 	return (count);
 }
 
-//strlenvega cherche la longueur entre chaque potion
-int	ft_strlenvega(char *string, int start, char c)
+//calcul taille des string
+int	len(char const *s, char c, int start)
 {
-	int	len;
-
-	len = 0;
-	if(string[start] == c)
-	{
+	while (s[start] && s[start] != c)
 		start++;
-		len++;
-	}
-	while (string[start] && string[start] != c)
-	{
-		len++;
-		start++;		
-	}
-	return (len);
+	return (start);
 }
